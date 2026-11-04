@@ -1,0 +1,34 @@
+{
+  "name": "@concredo/offchain",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Concredo off-chain code: transaction building and chain queries for preprod (Lucid Evolution).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "tip": "tsx scripts/tip.ts",
+    "utxos": "tsx scripts/tip.ts",
+    "blueprint": "tsx scripts/blueprint.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "drep": "tsx scripts/drep.ts",
+    "vault:create": "tsx scripts/create-vault.ts",
+    "vault:check": "tsx scripts/check-vaults.ts",
+    "vault:mint": "tsx scripts/mint-vault.ts",
+    "position": "tsx scripts/position.ts",
+    "loans": "tsx scripts/loans.ts"
+  },
+  "dependencies": {
+    "@lucid-evolution/lucid": "0.8.6",
+    "dotenv": "17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "viem": "2.57.5",
+    "vitest": "5.0.5"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "vaults": [
+    {
+      "drepId": "drep1yf3yx7ptr0hks02d7k8c8xfq58jn68nje5emscvv7a9ngpqudkpdh",
+      "approvedPools": [],
+      "scriptHash": "4b6a5834dee29416b69b8840c8dc6986b1ec21e331d91355df8541a6",
+      "stakeAddress": "stake_test17p9k5kp5mm3fg94knwyypjxudxrtrmppuvcajy64m7z5rfsu8p5x3",
+      "compiler": "Aiken v1.1.24+bacbeb3",
+      "plutus": "v3",
+      "txHash": "8856232a1e84533f32dd3937c55af58a21c30c7de1dd18aaed1ca4f06cf0f1e5",
+      "createdAt": "2026-10-27T13:52:37.000Z",
+      "mint": {
+        "unit": "78c3ba2ad186cdba625a3f2ddfb70a540aa58585f704f30f1484f4d54b6a5834dee29416b69b8840c8dc6986b1ec21e331d91355df8541a6",
+        "txHash": "fc94063324a6ab05b2244138e649ce6ff68e56c4b7a823ce565b63dde3366589",
+        "path": "delegate",
+        "mintedAt": "2026-10-27T17:53:09.274Z"
+      }
+    },
+    {
+      "drepId": "drep1y2qn0rf74zdk3u8upx2yk8un7tlts5f33uvklx96gq5a32qmwj3xg",
+      "approvedPools": [],
+      "scriptHash": "171bb46587cb84d1382a3d5524befdd87815e80d3cb0c4b4c623e73a",
+      "stakeAddress": "stake_test17qt3hdr9sl9cf5fc9g742f97lhv8s90gp57tp395cc37wws8t0qvk",
+      "compiler": "Aiken v1.1.24+bacbeb3",
+      "plutus": "v3",
+      "txHash": "0c669ffbba62b52cd228dbbb3707d07c8d7bb74bf11d894ea8c9b870be0730ce",
+      "createdAt": "2026-10-27T14:21:24.984Z",
+      "mint": {
+        "unit": "78c3ba2ad186cdba625a3f2ddfb70a540aa58585f704f30f1484f4d5171bb46587cb84d1382a3d5524befdd87815e80d3cb0c4b4c623e73a",
+        "txHash": "65f6f21df4e30b69fa324d79e2cc1c13b4c7e8028ba8d9ee7215fbdcc2c38ef9",
+        "path": "delegate",
+        "mintedAt": "2026-10-27T17:53:37.673Z"
+      }
+    },
+    {
+      "drepId": "drep1yf3yx7ptr0hks02d7k8c8xfq58jn68nje5emscvv7a9ngpqudkpdh",
+      "approvedPools": [
+        "85eb86b47f9f8e736e729c0176ba45cf9778e238b4452b7a6428a6e9"
+      ],
+      "pool": "pool1sh4cddrln788xmnjnsqhdwj9e7th3c3ck3zjk7ny9znwj44t8he",
+      "stakedAddress": "addr_test1yz0su6e83x3mpxkeg59sh9qhn24x6afqxzt6vvw7ufers7aflhmqqc6097upj8y3axrxq9cfdeq6xpg4w05vxkxkjrnsx9wnux",
+      "stakedLovelace": "1000000000",
+      "scriptHash": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+      "stakeAddress": "stake_test17z5lmasqvd8jlwqerjg7npnqzuykusdrq52h86xrtrtfpec8kxgrn",
+      "compiler": "Aiken v1.1.24+bacbeb3",
+      "plutus": "v3",
+      "txHash": "26c24df02f68520e8fe0ca671d5947ae351fc42c71d61c9c79c4ab2bf0f6ac75",
+      "createdAt": "2026-10-27T14:23:50.086Z",
+      "mint": {
+        "unit": "78c3ba2ad186cdba625a3f2ddfb70a540aa58585f704f30f1484f4d5a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "txHash": "de8cbe855e6aed269d83c3c0855b00de06ee958726b073bb5c2342b48c6d7ccb",
+        "path": "delegate",
+        "mintedAt": "2026-10-27T17:54:29.428Z"
+      }
+    },
+    {
+      "drepId": "drep1y2qn0rf74zdk3u8upx2yk8un7tlts5f33uvklx96gq5a32qmwj3xg",
+      "approvedPools": [
+        "85eb86b47f9f8e736e729c0176ba45cf9778e238b4452b7a6428a6e9"
+      ],
+      "pool": "pool1sh4cddrln788xmnjnsqhdwj9e7th3c3ck3zjk7ny9znwj44t8he",
+      "scriptHash": "64cd043911026c13bc0c1457ee85d6a53b1b30d243c0c16f611a4a82",
+      "stakeAddress": "stake_test17pjv6ppezypxcyaups290m5966jnkxes6fpupst0vydy4qs3ad80e",
+      "compiler": "Aiken v1.1.24+bacbeb3",
+      "plutus": "v3",
+      "txHash": "a9322be2e634d72c53b3975ec0c9d5a4d190cd49a99e3c3a53e5729b502b3409",
+      "createdAt": "2026-10-27T17:56:41.905Z",
+      "mint": {
+        "unit": "78c3ba2ad186cdba625a3f2ddfb70a540aa58585f704f30f1484f4d564cd043911026c13bc0c1457ee85d6a53b1b30d243c0c16f611a4a82",
+        "txHash": "a9322be2e634d72c53b3975ec0c9d5a4d190cd49a99e3c3a53e5729b502b3409",
+        "path": "register-and-delegate",
+        "mintedAt": "2026-10-27T17:56:41.906Z"
+      }
+    },
+    {
+      "drepId": "drep1y2qn0rf74zdk3u8upx2yk8un7tlts5f33uvklx96gq5a32qmwj3xg",
+      "approvedPools": [
+        "85eb86b47f9f8e736e729c0176ba45cf9778e238b4452b7a6428a6e9",
+        "74f5dd2551c2c0fd71aebb95e1f58d0b742c0fd2ff1712644f709bdc"
+      ],
+      "pool": "pool1sh4cddrln788xmnjnsqhdwj9e7th3c3ck3zjk7ny9znwj44t8he",
+      "scriptHash": "2146984b1927fb5d0cc7b65b8282e4dd210f13d6787dbaab9ae67a5b",
+      "stakeAddress": "stake_test17qs5dxztrynlkhgvc7m9hq5zunwjzrcn6eu8mw4tntn85kc8mz775",
+      "compiler": "Aiken v1.1.24+bacbeb3",
+      "plutus": "v3",
+      "txHash": "7ac391bd393f7320dfc56d0b250dc521850b401ae4b8e6fb8e56c80f6312a135",
+      "createdAt": "2026-10-27T17:59:43.510Z",
+      "mint": {
+        "unit": "78c3ba2ad186cdba625a3f2ddfb70a540aa58585f704f30f1484f4d52146984b1927fb5d0cc7b65b8282e4dd210f13d6787dbaab9ae67a5b",
+        "txHash": "7ac391bd393f7320dfc56d0b250dc521850b401ae4b8e6fb8e56c80f6312a135",
+        "path": "delegate",
+        "griefTxHash": "36c297d04fb23471af3f88bb265b4e985e61fc1b00c99ca8da52675e10263cb2",
+        "mintedAt": "2026-10-27T17:59:43.510Z"
+      }
+    }
+  ],
+  "vaultMint": {
+    "policyId": "78c3ba2ad186cdba625a3f2ddfb70a540aa58585f704f30f1484f4d5",
+    "compiler": "Aiken v1.1.24+bacbeb3",
+    "plutus": "v3"
+  },
+  "lending": {
+    "scriptHash": "6da5aca7a6786b4be87a664c14d57c04347ead46dffedcbec140b568",
+    "log": [
+      {
+        "action": "deposit",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "txHash": "b934cf97dde7ef4fdc258fefea70194cb5611e745e05d37b1e7e66e36493d522",
+        "at": "2026-10-27T18:09:16.717Z"
+      },
+      {
+        "action": "deposit",
+        "vault": "4b6a5834dee29416b69b8840c8dc6986b1ec21e331d91355df8541a6",
+        "txHash": "52bbef03b320683a8ca0d114758b9d6d500f800d37a5258c742051891794f607",
+        "at": "2026-10-27T18:09:43.619Z"
+      },
+      {
+        "action": "adjust",
+        "vault": "4b6a5834dee29416b69b8840c8dc6986b1ec21e331d91355df8541a6",
+        "txHash": "adf5be4d1c695ea3b3862ea369de2e4c0aeed4820fe4fb207cb286e8191e5e16",
+        "at": "2026-10-27T18:10:01.444Z"
+      },
+      {
+        "action": "move",
+        "vault": "4b6a5834dee29416b69b8840c8dc6986b1ec21e331d91355df8541a6",
+        "txHash": "71a6ae1d035a6cdbf0ef6ae1095f2ed2fee6881327c0d8bcd5574192ef8f3448",
+        "at": "2026-10-27T18:11:12.608Z"
+      },
+      {
+        "action": "withdraw",
+        "vault": "171bb46587cb84d1382a3d5524befdd87815e80d3cb0c4b4c623e73a",
+        "txHash": "79b20bfc9168f020323b93f422c5c4b0a09003ea7d862617889f6ee986892231",
+        "at": "2026-10-27T18:12:02.482Z"
+      },
+      {
+        "action": "migrate",
+        "script": "67c10e83dcf83217855bf1865cfb9b5ee0b4c3a870e1312374e8a86a",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "txHash": "318523bc083bed91c93d8ad27d00506131d29d2087d97e6d89ef3367ad02d958",
+        "at": "2026-10-27T21:39:39.599Z"
+      },
+      {
+        "action": "borrow",
+        "script": "67c10e83dcf83217855bf1865cfb9b5ee0b4c3a870e1312374e8a86a",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "tUSD": 50,
+        "txHash": "4b488970c5492570d628ea3e28cfc67723f76ae31348c737a0617d72c5ee1bc7",
+        "at": "2026-10-27T21:41:33.285Z"
+      },
+      {
+        "action": "repay",
+        "script": "67c10e83dcf83217855bf1865cfb9b5ee0b4c3a870e1312374e8a86a",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "tUSD": 50.000018,
+        "txHash": "4c713685bd6e63629c0dff51d2d904aa4c58d25e02378e19763cf0db1b0f1753",
+        "at": "2026-10-27T21:42:29.362Z"
+      }
+    ]
+  },
+  "loans": {
+    "note": "Preprod test values, not proposals (open question 6). tUSD, POOL and ORACLE are minted under a native policy signed by the test wallet.",
+    "config": {
+      "stable": {
+        "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
+        "name": "74555344"
+      },
+      "poolToken": {
+        "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
+        "name": "504f4f4c"
+      },
+      "oracleToken": {
+        "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
+        "name": "4f5241434c45"
+      },
+      "maxAgeMs": 3600000,
+      "maxLtvBps": 5000,
+      "rateBps": 1000
+    },
+    "lendingHash": "67c10e83dcf83217855bf1865cfb9b5ee0b4c3a870e1312374e8a86a",
+    "poolHash": "2c6a9b862bd3b2a42b9755fde7a8832c679a882a46b54f330f1264d1",
+    "poolAddress": "addr_test1wqkx4xux90fm9fptja2lmeagsvkx0x5g9frt2nenpufxf5g62yd8h",
+    "log": [
+      {
+        "action": "open",
+        "txHash": "cc46961b0f199f835c4a319d2ae76fe85668e8e9f8f3040f54b2b87c8844a959",
+        "at": "2026-10-27T21:37:57.560Z"
+      }
+    ]
+  }
+}

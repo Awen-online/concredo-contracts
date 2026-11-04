@@ -1,0 +1,23 @@
+name = "awen/concredo"
+version = "0.0.0"
+compiler = "v1.1.24"
+plutus = "v3"
+license = "Apache-2.0"
+description = "Concredo: per-DRep bucket lending protocol (Plutus V3). Preprod MVP."
+
+[repository]
+user = "Awen-online"
+project = "Concredo"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v4.0.0"
+source = "github"
+
+[[dependencies]]
+name = "aiken-lang/fuzz"
+version = "v3.0.0"
+source = "github"
+
+[config]

@@ -1,0 +1,7 @@
+# Aiken working directory (dependencies, compiled modules)
+build/
+# Aiken's default documentation export
+docs/
+# Local scratch exports. The canonical plutus.json is NOT ignored:
+# it is committed only from a tagged release build (see docs/infrastructure.md, section 2.4).
+artifacts/
