@@ -110,6 +110,11 @@ validator lending(cfg: Config) {
         fn(i) { i.output.address.payment_credential == own_payment },
       ) == 1,
       list.has(self.extra_signatories, position.owner),
+      // A position is created by a plain payment to this script, so nothing
+      // has checked the datum it arrives with. A negative debt would let a
+      // forged position borrow against a loan it never took.
+      position.debt >= 0,
+      position.since >= 0,
       when action is {
         Withdraw -> and {
             position.debt == 0,
@@ -752,6 +757,77 @@ test move_cannot_drop_the_loan() fail {
         Input { output_reference: ref, output: utxo(at(drep_a), held, ada100) },
       ],
     },
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Forged positions (audit 2026-11-10, finding 1)
+
+/// A position paid in with debt of -50 tUSD tries to borrow 80 tUSD against
+/// 100 ADA (room for 35). Without the input check, the new debt would be
+/// 30 tUSD and the borrow would pass.
+test forged_negative_debt_cannot_borrow() fail {
+  let held = loan(-50_000_000, later)
+  run_with(
+    held,
+    Borrow { amount: 80_000_000 },
+    loan_tx(
+      held,
+      ada100,
+      100_000_000,
+      [utxo(at(drep_a), loan(30_000_000, later), ada100), pool_at(20_000_000)],
+      later,
+    ),
+  )
+}
+
+test forged_negative_debt_cannot_adjust() fail {
+  let held = loan(-1, t0)
+  run_with(
+    held,
+    Adjust,
+    Transaction {
+      ..tx([utxo(at(drep_a), held, ada100)], [me]),
+      inputs: [
+        Input { output_reference: ref, output: utxo(at(drep_a), held, ada100) },
+      ],
+    },
+  )
+}
+
+test negative_since_is_refused() fail {
+  let held = loan(0, -1)
+  run_with(
+    held,
+    Withdraw,
+    Transaction {
+      ..tx([], [me]),
+      inputs: [
+        Input { output_reference: ref, output: utxo(at(drep_a), held, ada100) },
+      ],
+    },
+  )
+}
+
+/// Any negative starting debt is refused for a borrow that would otherwise fit.
+test prop_negative_debt_never_borrows(
+  d via fuzz.int_between(-1_000_000_000, -1),
+) {
+  let held = loan(d, later)
+  let amount = 35_000_000 - d
+  !run_with(
+    held,
+    Borrow { amount },
+    loan_tx(
+      held,
+      ada100,
+      2_000_000_000,
+      [
+        utxo(at(drep_a), loan(35_000_000, later), ada100),
+        pool_at(2_000_000_000 - amount),
+      ],
+      later,
+    ),
   )
 }
 
