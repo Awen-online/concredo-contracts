@@ -15,7 +15,7 @@ Each DRep vault is its own Plutus V3 stake credential. ADA deposited in a vault 
 | `contracts/validators/lending.ak` | Shared lending validator. Every position is one UTxO at its vault's full address (payment part plus stake part); the output must stay at a genuine vault. |
 | `contracts/validators/pool.ak` | Stablecoin pool: pays out only beside a position; anyone may top it up; no admin key. |
 | `contracts/lib/concredo/` | Shared rules: certificate checks, vault identity, assets. |
-| `contracts/plutus.json` | Committed blueprint. CI fails if it is stale. |
+| `contracts/plutus.json` | Committed blueprint. `aiken build` reproduces it exactly. |
 | `deployments/preprod.json` | Deployed preprod scripts: hashes, parameters, compiler version and transaction hashes. |
 | `offchain/` | Transaction builders and tests (TypeScript, Lucid Evolution 0.8.6). |
 
@@ -41,7 +41,11 @@ npm test             # off-chain and emulator tests
 
 ## Not built yet
 
-Liquidation, the interest curve, lender withdrawals, the pro-rata reward sweep, the DRep curator share, a gate on Always Abstain (anyone can set it today), the ADA market, pool concurrency, and a dApp.
+Liquidation, the interest curve, lender withdrawals, the pro-rata reward sweep, the DRep curator share, a gate on Always Abstain (anyone can set it today), a position token issued at creation, admin pause and timelock, the ADA market, pool concurrency, and a dApp.
+
+## Design references
+
+Some comments refer to numbered design questions. The specification that defines them will be published in this repository before the audit.
 
 ## License
 

@@ -761,7 +761,7 @@ test move_cannot_drop_the_loan() fail {
 }
 
 // ---------------------------------------------------------------------------
-// Forged positions (audit 2026-11-10, finding 1)
+// Forged positions
 
 /// A position paid in with debt of -50 tUSD tries to borrow 80 tUSD against
 /// 100 ADA (room for 35). Without the input check, the new debt would be
