@@ -41,14 +41,19 @@ export interface LoanConfig {
 
 /** The test tokens: tUSD, the pool token and the oracle token, under one
  *  native policy signed by the test admin key. Used only on preprod. */
-export function testTokens(adminKeyHash: string) {
+/** Test tokens under one native policy signed by the admin key. Each preprod
+ *  deployment gets its own pool and oracle names (`generation` 1 is POOL and
+ *  ORACLE, 2 is POOL2 and ORACLE2), so a price posted for one deployment is
+ *  never accepted by another. */
+export function testTokens(adminKeyHash: string, generation = 1) {
   const policy = scriptFromNative({ type: "sig", keyHash: adminKeyHash });
   const id = mintingPolicyToId(policy);
+  const g = generation > 1 ? String(generation) : "";
   return {
     policy,
     tUSD: { policy: id, name: fromText("tUSD") },
-    pool: { policy: id, name: fromText("POOL") },
-    oracle: { policy: id, name: fromText("ORACLE") },
+    pool: { policy: id, name: fromText(`POOL${g}`) },
+    oracle: { policy: id, name: fromText(`ORACLE${g}`) },
   };
 }
 

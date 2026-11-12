@@ -22,7 +22,7 @@ import { preprod, submitAndRecord, PREPROD_TEST_VALUES } from "../src/preprod-lo
 
 const [cmd, ...args] = process.argv.slice(2);
 const submit = args.includes("--submit");
-const value = (flag: string) => args[args.indexOf(flag) + 1];
+const value = (flag: string) => (args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined);
 const has = (flag: string) => args.includes(flag);
 const tusd = (n: string) => BigInt(Math.round(Number(n) * 1e6));
 
@@ -30,7 +30,7 @@ const p = await preprod();
 const { l } = p;
 
 async function price(): Promise<bigint> {
-  if (has("--usd")) return tusd(value("--usd"));
+  if (has("--usd")) return tusd(value("--usd") ?? "");
   const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=cardano&vs_currencies=usd", { signal: AbortSignal.timeout(15_000) });
   if (!res.ok) throw new Error(`CoinGecko HTTP ${res.status}; pass --usd P instead`);
   const usd = (await res.json()).cardano.usd as number;
@@ -57,7 +57,7 @@ let tx;
 if (cmd === "open") {
   if (p.isOpen) throw new Error("the pool is already recorded in deployments; use `price` or `status`");
   const supply = tusd(value("--supply") ?? "5000");
-  const spare = tusd(has("--spare") ? value("--spare") : "100");
+  const spare = tusd(value("--spare") ?? "100");
   const px = await price();
   tx = openPool(p.lucid, p.ownerKey, p.wallet.address, l, supply, spare, px, Date.now());
   console.log(`open          : pool with ${Number(supply) / 1e6} tUSD, ${Number(spare) / 1e6} tUSD to the wallet, price ${Number(px) / 1e6}`);

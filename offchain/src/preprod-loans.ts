@@ -25,9 +25,10 @@ export async function preprod() {
   const dep = existsSync(depFile) ? JSON.parse(readFileSync(depFile, "utf8")) : { vaults: [] };
   const save = () => writeFileSync(depFile, JSON.stringify(dep, null, 2) + "\n");
 
-  /** The loan config: as recorded, or the test values with this wallet's test tokens. */
+  /** The loan config: as recorded, or the test values with this wallet's test
+   *  tokens, named for the next deployment after any in `loansHistory`. */
   const recorded = dep.loans?.config as LoanConfig | undefined;
-  const t = testTokens(ownerKey);
+  const t = testTokens(ownerKey, (dep.loansHistory?.length ?? 0) + 1);
   const loanCfg: LoanConfig = recorded ?? { stable: t.tUSD, poolToken: t.pool, oracleToken: t.oracle, ...PREPROD_TEST_VALUES };
   const lending = lendingScript(loanCfg);
   const pool = poolScript(loanCfg, lending);

@@ -154,9 +154,65 @@
         "tUSD": 50.000018,
         "txHash": "4c713685bd6e63629c0dff51d2d904aa4c58d25e02378e19763cf0db1b0f1753",
         "at": "2026-10-27T21:42:29.362Z"
+      },
+      {
+        "action": "deposit",
+        "script": "59cb7805baecb81095d3577c9cc1052131ec4af86a1c1507781044df",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "txHash": "915657e141f51e3d1ed53c3c99db7c7ccce793472675323d14e732a3b089229e",
+        "at": "2026-11-11T20:46:01.565Z"
+      },
+      {
+        "action": "borrow",
+        "script": "59cb7805baecb81095d3577c9cc1052131ec4af86a1c1507781044df",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "tUSD": 50,
+        "txHash": "f0ccddf0a58d65ef04048889424b9dbf33f5b00889adaadd8a872ce6da592d54",
+        "at": "2026-11-11T20:47:20.206Z"
+      },
+      {
+        "action": "repay",
+        "script": "59cb7805baecb81095d3577c9cc1052131ec4af86a1c1507781044df",
+        "vault": "a9fdf600634f2fb8191c91e9866017096e41a3051573e8c358d690e7",
+        "tUSD": 50.010001,
+        "txHash": "13f43bf189d603383d61aa3d083c09eef4607619007e43d869271427717e7517",
+        "at": "2026-11-12T14:18:19.000Z"
       }
     ]
   },
+  "loansHistory": [
+    {
+      "note": "Preprod test values, not proposals (open question 6). tUSD, POOL and ORACLE are minted under a native policy signed by the test wallet.",
+      "config": {
+        "stable": {
+          "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
+          "name": "74555344"
+        },
+        "poolToken": {
+          "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
+          "name": "504f4f4c"
+        },
+        "oracleToken": {
+          "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
+          "name": "4f5241434c45"
+        },
+        "maxAgeMs": 3600000,
+        "maxLtvBps": 5000,
+        "rateBps": 1000
+      },
+      "lendingHash": "67c10e83dcf83217855bf1865cfb9b5ee0b4c3a870e1312374e8a86a",
+      "poolHash": "2c6a9b862bd3b2a42b9755fde7a8832c679a882a46b54f330f1264d1",
+      "poolAddress": "addr_test1wqkx4xux90fm9fptja2lmeagsvkx0x5g9frt2nenpufxf5g62yd8h",
+      "log": [
+        {
+          "action": "open",
+          "txHash": "cc46961b0f199f835c4a319d2ae76fe85668e8e9f8f3040f54b2b87c8844a959",
+          "at": "2026-10-27T21:37:57.560Z"
+        }
+      ],
+      "supersededBy": "lending fix 0cf82ff (positions with negative debt are refused)"
+    }
+  ],
   "loans": {
     "note": "Preprod test values, not proposals (open question 6). tUSD, POOL and ORACLE are minted under a native policy signed by the test wallet.",
     "config": {
@@ -166,24 +222,34 @@
       },
       "poolToken": {
         "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
-        "name": "504f4f4c"
+        "name": "504f4f4c32"
       },
       "oracleToken": {
         "policy": "9212df0a6105a65475c238968bda2bfe46394c037b8f287b347fb433",
-        "name": "4f5241434c45"
+        "name": "4f5241434c4532"
       },
       "maxAgeMs": 3600000,
       "maxLtvBps": 5000,
       "rateBps": 1000
     },
-    "lendingHash": "67c10e83dcf83217855bf1865cfb9b5ee0b4c3a870e1312374e8a86a",
-    "poolHash": "2c6a9b862bd3b2a42b9755fde7a8832c679a882a46b54f330f1264d1",
-    "poolAddress": "addr_test1wqkx4xux90fm9fptja2lmeagsvkx0x5g9frt2nenpufxf5g62yd8h",
+    "lendingHash": "59cb7805baecb81095d3577c9cc1052131ec4af86a1c1507781044df",
+    "poolHash": "ed328ad3cfa66e0471e24afa7ed381f186b8da17bf2fa4abca25f500",
+    "poolAddress": "addr_test1wrkn9zkne7nxupr3uf905lkns8ccdwx6z7ljlf9tegjl2qqxmhkka",
     "log": [
       {
         "action": "open",
-        "txHash": "cc46961b0f199f835c4a319d2ae76fe85668e8e9f8f3040f54b2b87c8844a959",
-        "at": "2026-10-27T21:37:57.560Z"
+        "txHash": "3d3743ff6cd9f8917bef4a209169d6d0b92efbba5e81c432cfb6e407e362548f",
+        "at": "2026-11-11T20:42:21.438Z"
+      },
+      {
+        "action": "price",
+        "txHash": "69a252bf3fb30a4a10502c6480e2270feced7a9d15771338d8db60e5e33a0a51",
+        "at": "2026-11-11T23:15:03.414Z"
+      },
+      {
+        "action": "price",
+        "txHash": "0f25c5f05b6b28998623c246d298b2db5629bc95786ce8a36f641a9e449cf382",
+        "at": "2026-11-12T14:17:31.284Z"
       }
     ]
   }

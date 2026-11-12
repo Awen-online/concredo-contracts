@@ -38,6 +38,7 @@ npm test             # off-chain and emulator tests
 1. Run `aiken build` and compare the validator hashes in `contracts/plutus.json` with the committed file.
 2. Each vault in `deployments/preprod.json` lists its DRep, script hash, stake address, compiler and the transaction that created it. Look the transaction up on [preprod.cardanoscan.io](https://preprod.cardanoscan.io) to see the registration and vote delegation.
 3. To rebuild a vault's hash yourself, apply its DRep and approved-pool list as parameters to `bucket_stake` and compare with the recorded `scriptHash`.
+4. The `loans` entry records the lending and pool scripts. Apply its `config` as the single parameter to `lending` and compare with `lendingHash`; then apply that hash, `config.stable` and `config.poolToken` to `pool` and compare with `poolHash`. `lendingScript` and `poolScript` in `offchain/src/lending.ts` do exactly this. Entries under `loansHistory` were built from earlier commits and say which change replaced them.
 
 ## Not built yet
 

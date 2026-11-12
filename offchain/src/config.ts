@@ -8,10 +8,11 @@ import path from "node:path";
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const OFFCHAIN_ROOT = path.resolve(here, "..");
 export const REPO_ROOT = path.resolve(OFFCHAIN_ROOT, "..");
-export const KEYS_DIR = path.join(REPO_ROOT, "keys");
-export const BLUEPRINT_PATH = path.join(REPO_ROOT, "contracts", "plutus.json");
-
 loadDotenv({ path: path.join(OFFCHAIN_ROOT, ".env"), quiet: true });
+
+/** The wallet folder. CONCREDO_KEYS_DIR points at another checkout's keys/ (for example a git worktree). */
+export const KEYS_DIR = process.env.CONCREDO_KEYS_DIR ?? path.join(REPO_ROOT, "keys");
+export const BLUEPRINT_PATH = path.join(REPO_ROOT, "contracts", "plutus.json");
 
 export type ProviderName = "koios" | "blockfrost" | "kupmios";
 export type NetworkName = "Preprod" | "Preview" | "Mainnet";

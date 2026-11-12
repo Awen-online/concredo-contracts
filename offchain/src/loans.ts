@@ -2,7 +2,7 @@
 // borrow and repay. Shared by scripts/loans.ts, scripts/position.ts and the
 // Emulator tests, so the tests run exactly what goes to preprod.
 
-import type { LucidEvolution, Script, UTxO } from "@lucid-evolution/lucid";
+import { mintingPolicyToId, type LucidEvolution, type Script, type UTxO } from "@lucid-evolution/lucid";
 import { type BucketParams } from "./blueprint.js";
 import {
   Action,
@@ -31,11 +31,13 @@ const slotStart = (lucid: LucidEvolution, ms: number) => lucid.slotToUnixTime(lu
  *  price, and leave `spare` tUSD in the admin wallet (to pay interest with). */
 export function openPool(lucid: LucidEvolution, adminKeyHash: string, oracleAddress: string, l: Loans, supply: bigint, spare: bigint, price: bigint, now: number) {
   const t = testTokens(adminKeyHash);
+  const [stable, pool, oracle] = [unit(l.cfg.stable), unit(l.cfg.poolToken), unit(l.cfg.oracleToken)];
+  if (![stable, pool, oracle].every((u) => u.startsWith(mintingPolicyToId(t.policy)))) throw new Error("the loan config's tokens are not under this admin key's policy");
   return lucid.newTx()
-    .mintAssets({ [unit(t.tUSD)]: supply + spare, [unit(t.pool)]: 1n, [unit(t.oracle)]: 1n })
+    .mintAssets({ [stable]: supply + spare, [pool]: 1n, [oracle]: 1n })
     .attach.MintingPolicy(t.policy)
-    .pay.ToContract(l.poolAddress, { kind: "inline", value: "d87980" }, { [unit(t.pool)]: 1n, [unit(t.tUSD)]: supply })
-    .pay.ToAddressWithData(oracleAddress, { kind: "inline", value: priceFeedDatum(price, BigInt(slotStart(lucid, now))) }, { [unit(t.oracle)]: 1n })
+    .pay.ToContract(l.poolAddress, { kind: "inline", value: "d87980" }, { [pool]: 1n, [stable]: supply })
+    .pay.ToAddressWithData(oracleAddress, { kind: "inline", value: priceFeedDatum(price, BigInt(slotStart(lucid, now))) }, { [oracle]: 1n })
     .addSigner(oracleAddress);
 }
 
